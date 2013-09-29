@@ -1,1 +1,1 @@
-java -cp "target\classes;target\dependency\*" HelloWorld
+web:    java -cp target/classes:target/dependency/* HelloWorld
