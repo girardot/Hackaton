@@ -8,12 +8,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-public class HelloWorld extends HttpServlet {
+public class ServerHackaton extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        resp.getWriter().print("Hello from Java!\n");
+        String question = req.getParameter("question");
+
+        String response = "No question";
+
+        if ("Qu'elle est la couleur du cheval blanc d'henri iv".equalsIgnoreCase(question)) {
+            response = "gris";
+        }
+
+        resp.getWriter().print(response);
     }
 
     public static void main(String[] args) throws Exception {
@@ -21,7 +29,7 @@ public class HelloWorld extends HttpServlet {
         ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
         context.setContextPath("/");
         server.setHandler(context);
-        context.addServlet(new ServletHolder(new HelloWorld()), "/*");
+        context.addServlet(new ServletHolder(new ServerHackaton()), "/*");
         server.start();
         server.join();
     }
