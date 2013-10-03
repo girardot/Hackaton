@@ -74,29 +74,7 @@ public class ServerHackaton extends HttpServlet {
                 break;
             default:
                 if (question.toLowerCase().matches("combien font [0-9]* .* [0-9]* \\?")) {
-                    Pattern pattern = Pattern.compile("combien font ([0-9]*) (.*) ([0-9]*) \\?");
-                    final Matcher matcher = pattern.matcher(question.toLowerCase());
-
-                    final Integer left = Integer.parseInt(matcher.group(1));
-                    final Integer right = Integer.parseInt(matcher.group(3));
-                    final String op = matcher.group(2);
-
-                    Integer result;
-                    switch(op) {
-                        case "plus":
-                            result = left + right;
-                            break;
-                        case "fois":
-                            result = left * right;
-                            break;
-                        case "moins":
-                            result = left - right;
-                            break;
-                        default:
-                            result = 0;
-                    }
-
-                    response = result.toString();
+                    response = calculate(question.toLowerCase()).toString();
                     break;
                 }
                 response = "no valid question";
@@ -107,8 +85,35 @@ public class ServerHackaton extends HttpServlet {
         resp.getWriter().print(response);
     }
 
-    public static int calculate(String q) {
-        return 0;
+    public static Integer calculate(String q) {
+
+        Integer result = 0;
+        if (q.toLowerCase().matches("combien font ([0-9]*) (.*?) ([0-9]*) \\?")) {
+
+            Pattern pattern = Pattern.compile("combien font ([0-9]*) (.*?) ([0-9]*) \\?");
+            final Matcher matcher = pattern.matcher(q.toLowerCase());
+
+            matcher.find();
+
+            final Integer left = Integer.parseInt(matcher.group(1));
+            final Integer right = Integer.parseInt(matcher.group(3));
+            final String op = matcher.group(2);
+
+            switch (op) {
+                case "plus":
+                    result = left + right;
+                    break;
+                case "fois":
+                    result = left * right;
+                    break;
+                case "moins":
+                    result = left - right;
+                    break;
+                default:
+                    result = 0;
+            }
+        }
+        return result;
     }
 
     public static void main(String[] args) throws Exception {
