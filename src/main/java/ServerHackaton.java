@@ -109,7 +109,7 @@ public class ServerHackaton extends HttpServlet {
                     result = 0;
             }
         } else if (q.toLowerCase().matches("quelle est la valeur decimal.*")) {
-            Pattern pattern = Pattern.compile("quelle est la valeur decimal.* de (.*)");
+            Pattern pattern = Pattern.compile("quelle est la valeur decimal.* de 0x(.*)");
             final Matcher matcher = pattern.matcher(q);
             matcher.find();
 
