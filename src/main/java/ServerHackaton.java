@@ -1,6 +1,8 @@
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -10,10 +12,15 @@ import java.io.IOException;
 
 public class ServerHackaton extends HttpServlet {
 
+    private final Logger logger = LoggerFactory.getLogger(ServerHackaton.class);
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
+
         String question = req.getParameter("q");
+
+        logger.info("Question on " + question);
 
         String response = "No question";
 
