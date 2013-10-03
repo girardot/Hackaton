@@ -19,7 +19,7 @@ public class ServerHackaton extends HttpServlet {
 
         switch (question) {
             case "Quelle est ton Identity ? (cf dashboard)":
-                response = "julien girardot";
+                response = "Antoine Michaud";
                 break;
             default:
                 response = "no valid question";
