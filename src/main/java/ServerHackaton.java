@@ -20,7 +20,7 @@ public class ServerHackaton extends HttpServlet {
 
         String question = req.getParameter("q");
 
-        logger.info("Question on " + question);
+        logger.info("Question : " + question);
 
         String response = "No question";
 
@@ -53,6 +53,7 @@ public class ServerHackaton extends HttpServlet {
                 response = "no valid question";
         }
 
+        logger.info("Response : " + response);
         resp.getWriter().print(response);
     }
 
