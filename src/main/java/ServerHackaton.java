@@ -30,7 +30,7 @@ public class ServerHackaton extends HttpServlet {
         ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
         context.setContextPath("/");
         server.setHandler(context);
-        context.addServlet(new ServletHolder(new ServerHackaton()), "/*");
+        context.addServlet(new ServletHolder(new ServerHackaton()), "/hackatonsoat/*");
         server.start();
         server.join();
     }
