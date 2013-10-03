@@ -53,7 +53,7 @@ public class ServerHackaton extends HttpServlet {
                 response = "ben affleck";
                 break;
             case "de qui indiana jones tire-t-il son nom ?":
-                response = "indien";
+                response = "lucas";
                 break;
             default:
                 response = "no valid question";
