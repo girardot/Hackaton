@@ -55,6 +55,9 @@ public class ServerHackaton extends HttpServlet {
             case "de qui indiana jones tient-il son nom ?":
                 response = "chien";
                 break;
+            case "de quelle serie vient la phrase : live long and prosper":
+                response = "star trek";
+                break;
             default:
                 response = "no valid question";
                 logger.info("*******    NO Response : " + response);
