@@ -73,11 +73,7 @@ public class ServerHackaton extends HttpServlet {
                 response = "star trek";
                 break;
             default:
-                if (question.toLowerCase().matches("combien font [0-9]* .* [0-9]* \\?")) {
-                    response = calculate(question.toLowerCase()).toString();
-                    break;
-                }
-                response = "no valid question";
+                response = calculate(question.toLowerCase()).toString();
                 logger.info("*******    NO Response : " + response);
         }
 
@@ -112,6 +108,13 @@ public class ServerHackaton extends HttpServlet {
                 default:
                     result = 0;
             }
+        } else if (q.toLowerCase().matches("quelle est la valeur decimal.*")) {
+            Pattern pattern = Pattern.compile("quelle est la valeur decimal.* de (.*)");
+            final Matcher matcher = pattern.matcher(q);
+            matcher.find();
+
+
+            result = Integer.parseInt(matcher.group(1),16);
         }
         return result;
     }
