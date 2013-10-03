@@ -17,9 +17,18 @@ public class ServerHackaton extends HttpServlet {
 
         String response = "No question";
 
-        switch (question) {
-            case "Quelle est ton Identity ? (cf dashboard)":
+        switch (question.toLowerCase()) {
+            case "quelle est ton identity ? (cf dashboard)":
                 response = "Antoine Michaud";
+                break;
+            case "quelle couleur est le contraire du noir":
+                response = "blanc";
+                break;
+            case "quel est le résultat d'addition de toutes les couleurs":
+                response = "blanc";
+                break;
+            case "de quelle couleur est une robe de mariee":
+                response = "blanc";
                 break;
             default:
                 response = "no valid question";
