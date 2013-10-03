@@ -47,7 +47,10 @@ public class ServerHackaton extends HttpServlet {
                 response = "zuckerberg";
                 break;
             case "quelle est la commande pour faire un save and quit dans VI ?":
-                response = ":wq";
+                response = "wq";
+                break;
+            case "qui sera le prochain batman ?":
+                response = "ben affleck";
                 break;
             default:
                 response = "no valid question";
