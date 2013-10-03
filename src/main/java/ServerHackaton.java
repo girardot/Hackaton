@@ -52,8 +52,8 @@ public class ServerHackaton extends HttpServlet {
             case "qui sera le prochain batman ?":
                 response = "ben affleck";
                 break;
-            case "de qui indiana jones tire-t-il son nom ?":
-                response = "lucas";
+            case "de qui indiana jones tient-il son nom ?":
+                response = "george lucas";
                 break;
             default:
                 response = "no valid question";
