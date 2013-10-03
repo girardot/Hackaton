@@ -43,6 +43,12 @@ public class ServerHackaton extends HttpServlet {
             case "de quelle couleur est le cheval blanc d'henry 4 ":
                 response = "blanc";
                 break;
+            case "qui est le fondateur de facebook ?":
+                response = "zuckerberg";
+                break;
+            case "quelle est la commande pour faire un save and quit dans VI ?":
+                response = ":wq";
+                break;
             default:
                 response = "no valid question";
         }
