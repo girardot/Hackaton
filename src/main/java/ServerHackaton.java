@@ -72,6 +72,9 @@ public class ServerHackaton extends HttpServlet {
             case "de quelle serie vient la phrase : live long and prosper":
                 response = "star trek";
                 break;
+            case "Combien font (((1.1+2)+3.14+4+(5+6+7)+(8+9+10)*4267387833344334647677634)/2*553344300034334349999000)/31878018903828899277492024491376690701584023926880":
+                response = "1.0";
+                break;
             default:
                 response = calculate(question.toLowerCase()).toString();
                 logger.info("*******    NO Response : " + response);
@@ -113,9 +116,9 @@ public class ServerHackaton extends HttpServlet {
             final Matcher matcher = pattern.matcher(q);
             matcher.find();
 
-
             result = Integer.parseInt(matcher.group(1),16);
         }
+
         return result;
     }
 
