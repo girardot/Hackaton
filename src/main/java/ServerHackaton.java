@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class ServerHackaton extends HttpServlet {
 
@@ -71,6 +73,32 @@ public class ServerHackaton extends HttpServlet {
                 response = "star trek";
                 break;
             default:
+                if (question.toLowerCase().matches("combien font [0-9]* .* [0-9]* \\?")) {
+                    Pattern pattern = Pattern.compile("combien font ([0-9]*) (.*) ([0-9]*) \\?");
+                    final Matcher matcher = pattern.matcher(question.toLowerCase());
+
+                    final Integer left = Integer.parseInt(matcher.group(1));
+                    final Integer right = Integer.parseInt(matcher.group(3));
+                    final String op = matcher.group(2);
+
+                    Integer result;
+                    switch(op) {
+                        case "plus":
+                            result = left + right;
+                            break;
+                        case "fois":
+                            result = left * right;
+                            break;
+                        case "moins":
+                            result = left - right;
+                            break;
+                        default:
+                            result = 0;
+                    }
+
+                    response = result.toString();
+                    break;
+                }
                 response = "no valid question";
                 logger.info("*******    NO Response : " + response);
         }
