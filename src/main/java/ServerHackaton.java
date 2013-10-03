@@ -46,14 +46,14 @@ public class ServerHackaton extends HttpServlet {
             case "qui est le fondateur de facebook ?":
                 response = "zuckerberg";
                 break;
-            case "quelle est la commande pour faire un save and quit dans VI ?":
+            case "quelle est la commande pour faire un save and quit dans vi ?":
                 response = "wq";
                 break;
             case "qui sera le prochain batman ?":
                 response = "ben affleck";
                 break;
             case "de qui indiana jones tient-il son nom ?":
-                response = "george lucas";
+                response = "chien";
                 break;
             default:
                 response = "no valid question";
