@@ -30,6 +30,12 @@ public class ServerHackaton extends HttpServlet {
             case "de quelle couleur est une robe de mariee":
                 response = "blanc";
                 break;
+            case "que boit la vache ?":
+                response = "eau";
+                break;
+            case "de quelle couleur est le cheval blanc d'henry 4 ":
+                response = "blanc";
+                break;
             default:
                 response = "no valid question";
         }
