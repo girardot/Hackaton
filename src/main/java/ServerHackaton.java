@@ -17,8 +17,9 @@ public class ServerHackaton extends HttpServlet {
 
         String response = "No question";
 
-        if ("Qu'elle est la couleur du cheval blanc d'henri iv".equalsIgnoreCase(question)) {
-            response = "gris";
+        switch (question) {
+            case "Quelle est ton Identity ?":
+                response = "julien girardot";
         }
 
         resp.getWriter().print(response);
