@@ -52,6 +52,18 @@ public class ServerHackaton extends HttpServlet {
             case "qui sera le prochain batman ?":
                 response = "ben affleck";
                 break;
+            case "combien font 0 plus 0 ?":
+                response = "chien";
+                break;
+            case "combien font 0 fois 1 ?":
+                response = "chien";
+                break;
+            case "combien font 2 moins 1":
+                response = "chien";
+                break;
+            case "combien font 0 plus 3 ?":
+                response = "chien";
+                break;
             case "de qui indiana jones tient-il son nom ?":
                 response = "chien";
                 break;
