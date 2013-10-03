@@ -107,6 +107,10 @@ public class ServerHackaton extends HttpServlet {
         resp.getWriter().print(response);
     }
 
+    public static int calculate(String q) {
+        return 0;
+    }
+
     public static void main(String[] args) throws Exception {
         Server server = new Server(Integer.valueOf(System.getenv("PORT")));
         ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
